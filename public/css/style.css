@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+}
+
+#height {
+    min-height: 100%;
+}
+
+#header {
+
+}

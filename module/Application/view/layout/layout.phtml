@@ -1,0 +1,70 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+        ?>
+    </head>
+
+    <body>
+        <div id="height">
+            <div id="header">
+                <header>
+                    <h1><a href="<?=$this->url('home');?>" title="home">Basic Template</a></h1>
+                </header>
+                <nav>
+                    <ul>
+                        <li><a href="<?=$this->url('login');?>" title="login">Login</a></li>
+                        <li><a href="<?=$this->url('admin');?>" title="admin">Admin</a></li>
+                        <li><a href="<?=$this->url('gallery');?>" title="gallery">Gallery</a>
+                            <ul>
+                                <li><a href="<?=$this->url('gallery/create');?>" title="create album">Create new Album</a></li>
+                                <li><a href="<?=$this->url('gallery');?>/update/1" title="update an album">Update an Album</a></li>
+                                <li><a href="<?=$this->url('gallery');?>/delete/1" title="delete an album">Delete an Album</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?=$this->url('page');?>" title="page">Page</a>
+                            <ul>
+                                <li><a href="<?=$this->url('page');?>/create" title="Create new Page">Creane new Page</a></li>
+                                <li><a href="<?=$this->url('page');?>/update/1" title="Update a Page">Update a Page</a></li>
+                                <li><a href="<?=$this->url('page');?>/delete/1" title="Delete a Page">Delete a Page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?=$this->url('blog');?>" title="blog">Blog</a>
+                            <ul>
+                                <li><a href="<?=$this->url('blog');?>/create" title="Create new Blog Post">Creane new Blog Post</a></li>
+                                <li><a href="<?=$this->url('blog');?>/update/1" title="Update a Blog Post">Update a Blog Post</a></li>
+                                <li><a href="<?=$this->url('blog');?>/delete/1" title="Delete a Blog Post">Delete a Blog Post</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!-- /#header -->
+
+            <div class="container">
+                <?= $this->content ?>
+            </div><!-- /.container -->
+        </div><!-- /#height -->
+
+        <footer>
+            <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
+        </footer>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>
